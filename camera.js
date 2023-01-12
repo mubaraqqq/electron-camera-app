@@ -16,15 +16,8 @@ captureButton.addEventListener("click", () => {
 
   const dataUrl = canvas.toDataURL();
   image.src = dataUrl;
-  // console.log(dataUrl);
   new Notification("Image Captured", {
     body: "Image successfully captured from Live Video",
   });
   ipcRenderer.sendImage(dataUrl);
 });
-
-// ipcRenderer.receiveImage((data) => {
-//   console.log(data, "received");
-// });
-
-// console.log(ipcRenderer, window.ipcRenderer);
